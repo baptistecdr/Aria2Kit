@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  mockserver:
+    image: mockserver/mockserver
+    container_name: mockserver
+    environment:
+      MOCKSERVER_SERVER_PORT: 6800
+      MOCKSERVER_INITIALIZATION_JSON_PATH: /config/expectations.json
+    volumes:
+      - ./Tests/Aria2KitTests/Resources/mockserver/expectations.json:/config/expectations.json
+    ports:
+      - "6800:6800"

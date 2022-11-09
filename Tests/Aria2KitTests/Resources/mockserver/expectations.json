@@ -1,0 +1,144 @@
+[
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/jsonrpc",
+      "headers": {
+        "Content-Type": [
+          "application/json-rpc"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "matchType": "STRICT",
+        "json": {
+          "id": "${json-unit.ignore-element}",
+          "jsonrpc": "2.0",
+          "method": "aria2.addUri",
+          "params": [
+            [
+              "https://proof.ovh.net/files/1Mb.dat"
+            ]
+          ]
+        }
+      }
+    },
+    "httpResponseTemplate": {
+      "template": "{\n    \"statusCode\": 200,\n    \"headers\": {\n      \"Content-Type\": [\"application/json-rpc\"]\n    },\n    \"body\": {\n      \"id\": \"{{#jsonPath}}$.id{{/jsonPath}}{{jsonPathResult}}\",\n      \"jsonrpc\": \"2.0\",\n      \"result\": \"2089b05ecca3d829\"\n    }\n  }",
+      "templateType": "MUSTACHE"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/jsonrpc",
+      "headers": {
+        "Content-Type": [
+          "application/json-rpc"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "matchType": "STRICT",
+        "json": {
+          "id": "${json-unit.ignore-element}",
+          "jsonrpc": "2.0",
+          "method": "aria2.addUri",
+          "params": [
+            "token:secret-token",
+            [
+              "https://proof.ovh.net/files/1Mb.dat"
+            ]
+          ]
+        }
+      }
+    },
+    "httpResponseTemplate": {
+      "template": "{\n    \"statusCode\": 200,\n    \"headers\": {\n      \"Content-Type\": [\"application/json-rpc\"]\n    },\n    \"body\": {\n      \"id\": \"{{#jsonPath}}$.id{{/jsonPath}}{{jsonPathResult}}\",\n      \"jsonrpc\": \"2.0\",\n      \"result\": \"2089b05ecca3d829\"\n    }\n  }",
+      "templateType": "MUSTACHE"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/jsonrpc",
+      "headers": {
+        "Content-Type": [
+          "application/json-rpc"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "matchType": "STRICT",
+        "json": {
+          "id": "${json-unit.ignore-element}",
+          "jsonrpc": "2.0",
+          "method": "system.multicall",
+          "params": [
+            [
+              {
+                "methodName": "aria2.addUri",
+                "params": [
+                  [
+                    "https://proof.ovh.net/files/1Mb.dat"
+                  ]
+                ]
+              },
+              {
+                "methodName": "aria2.getVersion",
+                "params": []
+              }
+            ]
+          ]
+        }
+      }
+    },
+    "httpResponseTemplate": {
+      "template": "{\n    \"statusCode\": 200,\n    \"headers\": {\n      \"Content-Type\": [\"application/json-rpc\"]\n    },\n    \"body\": {\n    \"id\": \"{{#jsonPath}}$.id{{/jsonPath}}{{jsonPathResult}}\",\n    \"jsonrpc\": \"2.0\",\n    \"result\": [\n      [\n        \"c2b8c3261da72d22\"\n      ],\n      [\n        {\n          \"enabledFeatures\": [\n            \"Async DNS\",\n            \"BitTorrent\",\n            \"Firefox3 Cookie\",\n            \"GZip\",\n            \"HTTPS\",\n            \"Message Digest\",\n            \"Metalink\",\n            \"XML-RPC\",\n            \"SFTP\"\n          ],\n          \"version\": \"1.36.0\"\n        }\n      ]\n    ]\n  }  }",
+      "templateType": "MUSTACHE"
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/jsonrpc",
+      "headers": {
+        "Content-Type": [
+          "application/json-rpc"
+        ]
+      },
+      "body": {
+        "type": "JSON",
+        "matchType": "STRICT",
+        "json": {
+          "id": "${json-unit.ignore-element}",
+          "jsonrpc": "2.0",
+          "method": "system.multicall",
+          "params": [
+            [
+              {
+                "methodName": "aria2.addUri",
+                "params": [
+                  "token:secret-token",
+                  [
+                    "https://proof.ovh.net/files/1Mb.dat"
+                  ]
+                ]
+              },
+              {
+                "methodName": "aria2.getVersion",
+                "params": [
+                  "token:secret-token"
+                ]
+              }
+            ]
+          ]
+        }
+      }
+    },
+    "httpResponseTemplate": {
+      "template": "{\n    \"statusCode\": 200,\n    \"headers\": {\n      \"Content-Type\": [\"application/json-rpc\"]\n    },\n    \"body\": {\n    \"id\": \"{{#jsonPath}}$.id{{/jsonPath}}{{jsonPathResult}}\",\n    \"jsonrpc\": \"2.0\",\n    \"result\": [\n      [\n        \"c2b8c3261da72d22\"\n      ],\n      [\n        {\n          \"enabledFeatures\": [\n            \"Async DNS\",\n            \"BitTorrent\",\n            \"Firefox3 Cookie\",\n            \"GZip\",\n            \"HTTPS\",\n            \"Message Digest\",\n            \"Metalink\",\n            \"XML-RPC\",\n            \"SFTP\"\n          ],\n          \"version\": \"1.36.0\"\n        }\n      ]\n    ]\n  }  }",
+      "templateType": "MUSTACHE"
+    }
+  }
+]

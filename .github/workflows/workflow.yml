@@ -1,0 +1,33 @@
+name: Aria2Kit CI
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/**
+      - Package.swift
+      - Sources/**
+      - Tests/**
+  pull_request:
+    paths:
+      - .github/workflows/**
+      - Package.swift
+      - Sources/**
+      - Tests/**
+
+jobs:
+  macOS:
+    name:
+    runs-on: macos-latest
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v3
+      - name: Install MockServer
+        env:
+          MOCKSERVER_INITIALIZATION_JSON_PATH: ./Tests/Aria2KitTests/Resources/mockserver/expectations.json
+        run: brew install mockserver && mockserver -serverPort 6800 &
+      - name: Build
+        run: swift build --build-tests
+      - name: Test
+        run: /Applications/Xcode.app/Contents/Developer/usr/bin/xctest -XCTest Aria2KitTests,Aria2KitTests.Aria2KitTests ./.build/debug/Aria2KitPackageTests.xctest
