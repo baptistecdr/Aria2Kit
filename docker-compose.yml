@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   mockserver:
-    image: mockserver/mockserver
+    image: mockserver/mockserver:5.14.0
     container_name: mockserver
     environment:
       MOCKSERVER_SERVER_PORT: 6800

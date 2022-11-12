@@ -5,10 +5,6 @@
     <a href="https://github.com/baptistecdr/Aria2Kit/issues/new">Request feature</a>
 </p>
 
-<div align="center">
-
-</div>
-
 ## Description
 
 Aria2Kit is a Swift library to interact with an Aria2 server.
@@ -31,9 +27,11 @@ dependencies: [
 
 You can also add Aria2Kit through Xcode > File > Add packages... > https://github.com/baptistecdr/Aria2Kit
 
-### Examples
+## Examples
 
 ```swift
+import Aria2Kit
+
 let aria2 = Aria2(ssl: false, host: "localhost", port: 6800, token: "secret-token")
 aria2.call(method: .addUri, params: [["https://proof.ovh.net/files/1Mb.dat"], ["split": "1"]]).responseData { response in
     debugPrint(response)
@@ -41,6 +39,8 @@ aria2.call(method: .addUri, params: [["https://proof.ovh.net/files/1Mb.dat"], ["
 ```
 
 ```swift
+import Aria2Kit
+
 let aria2 = Aria2(ssl: false, host: "localhost", port: 6800, token: "secret-token")
 let multicallParams = [
     Aria2MulticallParams(methodName: .addUri, params: [["https://proof.ovh.net/files/1Mb.dat"], ["split": "1"]]),
@@ -50,6 +50,11 @@ aria2.multicall(params: multicallParams).responseData { response in
     debugPrint(response)
 }
 ```
+
+## Build & Test
+
+* Open project in Xcode
+* Run `docker compose up -d` before running the tests
 
 ## Bugs and feature requests
 
