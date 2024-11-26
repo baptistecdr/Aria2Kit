@@ -1,13 +1,11 @@
 <h3 align="center">Aria2Kit</h3>
 <p align="center">
+    Aria2Kit is a Swift library to interact with an Aria2 server.
+    <br />
     <a href="https://github.com/baptistecdr/Aria2Kit/issues/new">Report bug</a>
     ·
     <a href="https://github.com/baptistecdr/Aria2Kit/issues/new">Request feature</a>
 </p>
-
-## Description
-
-Aria2Kit is a Swift library to interact with an Aria2 server.
 
 ## Installation
 
