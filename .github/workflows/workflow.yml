@@ -22,7 +22,7 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Clone Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Install MockServer
         env:
           MOCKSERVER_INITIALIZATION_JSON_PATH: ./Tests/Aria2KitTests/Resources/mockserver/expectations.json
