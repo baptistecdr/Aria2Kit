@@ -1,4 +1,4 @@
-// swift-tools-version: 6.2
+// swift-tools-version: 6.1
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -6,8 +6,8 @@ import PackageDescription
 let package = Package(
         name: "Aria2Kit",
         platforms: [.macOS(.v10_13),
-                    .iOS(.v12),
-                    .tvOS(.v12),
+                    .iOS(.v11),
+                    .tvOS(.v11),
                     .watchOS(.v4)],
         products: [
             .library(
@@ -15,8 +15,8 @@ let package = Package(
                     targets: ["Aria2Kit"]),
         ],
         dependencies: [
-            .package(url: "https://github.com/Alamofire/Alamofire", exact: "5.11.0"),
-            .package(url: "https://github.com/Flight-School/AnyCodable", exact: "0.6.7"),
+            .package(name: "Alamofire", url: "https://github.com/Alamofire/Alamofire", .revision("5.9.1")),
+            .package(name: "AnyCodable", url: "https://github.com/Flight-School/AnyCodable", .revision("0.6.7")),
         ],
         targets: [
             .target(
@@ -31,5 +31,5 @@ let package = Package(
                     resources: [.process("Resources")]
             ),
         ],
-        swiftLanguageModes: [.v5]
+        swiftLanguageVersions: [.v5]
 )
