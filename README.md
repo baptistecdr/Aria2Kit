@@ -19,7 +19,7 @@ value of your `Package.swift`.
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/baptistecdr/Aria2Kit", exact: "1.0.2")
+    .package(url: "https://github.com/baptistecdr/Aria2Kit", exact: "1.0.4")
 ]
 ```
 
