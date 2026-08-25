@@ -15,15 +15,13 @@ let package = Package(
                     targets: ["Aria2Kit"]),
         ],
         dependencies: [
-            .package(name: "Alamofire", url: "https://github.com/Alamofire/Alamofire", .revision("5.9.1")),
-            .package(name: "AnyCodable", url: "https://github.com/Flight-School/AnyCodable", .revision("0.6.7")),
+            .package(name: "Alamofire", url: "https://github.com/Alamofire/Alamofire", .revision("5.12.0")),
         ],
         targets: [
             .target(
                     name: "Aria2Kit",
                     dependencies: [
-                        "Alamofire",
-                        "AnyCodable"
+                        "Alamofire"
                     ]),
             .testTarget(
                     name: "Aria2KitTests",

@@ -49,6 +49,16 @@ aria2.multicall(params: multicallParams).responseData { response in
 }
 ```
 
+Async/await is also available (macOS 10.15+, iOS 13+, tvOS 13+, watchOS 6+):
+
+```swift
+import Aria2Kit
+
+let aria2 = Aria2(ssl: false, host: "localhost", port: 6800, token: "secret-token")
+let response = await aria2.call(method: .addUri, params: [["https://proof.ovh.net/files/1Mb.dat"], ["split": "1"]])
+debugPrint(response)
+```
+
 ## Build & Test
 
 * Open project in Xcode

@@ -1,5 +1,4 @@
 import Foundation
-import AnyCodable
 
 internal struct Aria2Body: Encodable {
     let id: String = UUID().uuidString
