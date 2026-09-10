@@ -15,7 +15,7 @@ let package = Package(
                     targets: ["Aria2Kit"]),
         ],
         dependencies: [
-            .package(url: "https://github.com/Alamofire/Alamofire", exact: "5.12.1"),
+            .package(url: "https://github.com/Alamofire/Alamofire", exact: "5.12.2"),
         ],
         targets: [
             .target(
