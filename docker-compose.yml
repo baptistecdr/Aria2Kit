@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   mockserver:
-    image: mockserver/mockserver:9.2.0@sha256:016f7d16bc88d2e1aa52d5a177f1aafee758cf70bea5e0624b0ab2c32f394df1
+    image: mockserver/mockserver:9.4.0@sha256:b54cb4aa72605b43ff9b728e5750d7beceb8f2d203d77ad9cb47743c5446ded6
     container_name: mockserver
     environment:
       MOCKSERVER_SERVER_PORT: 6800
